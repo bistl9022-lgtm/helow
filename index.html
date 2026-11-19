@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>I Am So Sorry, Babe ❤️</title>
+  
+  <!-- Romantic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Heart Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+
+  <!-- Background Canvas for Falling Rose Petals and Floating Hearts -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Ambient Rose Lights -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-center"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Romantic Ambient Audio Player Toggle (Web Audio API - 100% Offline & Reliable) -->
+  <div class="audio-control-bar">
+    <button id="musicToggleBtn" class="audio-pill-btn" aria-label="Toggle Romantic Music Box">
+      <span class="audio-icon" id="musicIcon">🎵</span>
+      <span class="audio-text" id="musicText">Play Our Melody</span>
+      <span class="audio-eq" id="audioEq">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Main Website Container -->
+  <div class="site-container">
+    
+    <!-- Top Sweet Header -->
+    <header class="top-header">
+      <div class="sweet-tag">
+        <span class="tag-heart">✨</span>
+        <span>A Letter From My Heart To Yours</span>
+        <span class="tag-heart">✨</span>
+      </div>
+    </header>
+
+    <!-- Hero 3D Heart Section (The Main Attraction) -->
+    <section class="heart-hero-section" id="heroSection">
+      
+      <!-- 3D Heart Viewport Container -->
+      <div class="heart-3d-stage" id="heartStage">
+        
+        <!-- Three.js / WebGL 3D Canvas -->
+        <canvas id="heartCanvas"></canvas>
+        
+        <!-- Pure CSS 3D Volumetric Heart (Synchronized Fallback & 3D Layer) -->
+        <div class="css-heart-3d" id="cssHeartFallback">
+          <div class="heart-pulse-wrapper">
+            <div class="heart-3d-body">
+              <div class="heart-lobe left-lobe"></div>
+              <div class="heart-lobe right-lobe"></div>
+              <div class="heart-center-fill"></div>
+              <!-- Wrapped 3D Ribbon with Text -->
+              <div class="wrapped-3d-ribbon">
+                <div class="ribbon-text ribbon-front">SORRY BABE ❤️</div>
+                <div class="ribbon-text ribbon-back">SORRY BABE ❤️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Realistic Glowing Red Shadow on Floor -->
+        <div class="heart-floor-shadow" id="floorShadow"></div>
+
+        <!-- Interactive Drag / Touch Hint -->
+        <div class="stage-hint">
+          <span class="hint-hand">👆</span>
+          <span>Touch or drag to spin my heart for you</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Romantic Apology Message Section -->
+    <section class="message-section">
+      <div class="message-card glass-panel">
+        
+        <!-- Decorative Rose Gold Top Divider -->
+        <div class="decorative-divider">
+          <span class="divider-line"></span>
+          <span class="divider-icon">❦ &nbsp; 💖 &nbsp; ❦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <!-- Required Headline: Hey Babe, I'm Really Sorry! ❤️ -->
+        <h1 class="apology-main-title">
+          Hey Babe, I'm Really Sorry! <span class="title-heart">❤️</span>
+        </h1>
+
+        <!-- Required Subtext -->
+        <p class="apology-main-text">
+          I know I may have hurt you, and that is the last thing I ever wanted to do. You mean so much to me. I cannot change what happened, but I promise to learn, understand, and do better. Please know that you are special to me.
+        </p>
+
+        <!-- Sweet Handwritten Quote -->
+        <div class="handwritten-note">
+          <p class="handwritten-text">
+            "Your smile is my favorite thing in the universe, and without it, everything feels gray. I miss you so much."
+          </p>
+        </div>
+
+        <!-- Interactive Action Buttons -->
+        <div class="action-buttons-wrapper">
+          
+          <!-- Required Button 1: Open My Heart ❤️ -->
+          <button class="btn-romantic btn-open-heart" id="openHeartBtn">
+            <span class="btn-sparkle-bg"></span>
+            <span class="btn-icon">💌</span>
+            <span class="btn-label">Open My Heart ❤️</span>
+          </button>
+
+          <!-- Required Button 2: One More Hug? 🤗 -->
+          <button class="btn-romantic btn-give-hug" id="giveHugBtn">
+            <span class="btn-sparkle-bg"></span>
+            <span class="btn-icon">🤗</span>
+            <span class="btn-label">One More Hug? 🤗</span>
+          </button>
+
+        </div>
+
+        <!-- Required Final Message: I Love You, Babe! ❤️ -->
+        <div class="final-love-banner">
+          <div class="banner-aura"></div>
+          <span class="final-love-text">I Love You, Babe! <span class="banner-heart">❤️</span></span>
+          <span class="final-love-sub">Now, tomorrow, and forever and always.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sweet Footer -->
+    <footer class="romantic-footer">
+      <div class="floating-footer-hearts">
+        <span>💕</span>
+        <span>💖</span>
+        <span>💗</span>
+        <span>💓</span>
+        <span>💞</span>
+      </div>
+      <p class="footer-credit">Handcrafted with all my love, just for my favorite girl.</p>
+    </footer>
+
+  </div>
+
+  <!-- Animated Love Letter Modal (Triggered by "Open My Heart ❤️") -->
+  <div class="letter-modal-backdrop" id="loveLetterModal" aria-hidden="true" role="dialog">
+    <div class="letter-modal-dialog">
+      
+      <!-- Envelope Top Flap Simulation -->
+      <div class="envelope-art">
+        <div class="wax-seal">
+          <span>SB</span>
+        </div>
+      </div>
+
+      <div class="letter-parchment">
+        <!-- Close Button -->
+        <button class="letter-close-btn" id="letterCloseBtn" aria-label="Close Letter">&times;</button>
+        
+        <div class="letter-heading">
+          <span class="letter-stamp">💌 FOR MY BABE</span>
+          <h2 class="letter-salutation">My Dearest Babe,</h2>
+        </div>
+
+        <div class="letter-content-body">
+          <p>
+            I’m writing this because words sometimes get caught in my throat, but my heart needs you to know how deeply sorry I am.
+          </p>
+          <p>
+            Whenever you're upset, my whole world stops. I replay the moment and wish I could take back every word or action that brought even a second of sadness to your eyes. You have the softest, most loving heart I’ve ever known, and protecting your peace should always be my priority.
+          </p>
+          <p class="letter-highlight">
+            "You are not just my girlfriend; you are my peace, my happiest thought, and the sweetest part of every day."
+          </p>
+          <p>
+            I never take your love for granted. I promise to listen to you with an open heart, to hold you whenever you feel uneasy, and to never stop trying to make you smile.
+          </p>
+          <p class="letter-signoff">
+            With all my love and endless regret,<br>
+            <span class="signature">Yours Always ❤️</span>
+          </p>
+        </div>
+
+        <!-- Sweet Romantic Coupons / Promises Inside Letter -->
+        <div class="letter-promises">
+          <div class="mini-promise">
+            <span class="p-icon">🍫</span>
+            <span>Your favorite sweet treats</span>
+          </div>
+          <div class="mini-promise">
+            <span class="p-icon">🧸</span>
+            <span>Unlimited tight cuddles</span>
+          </div>
+          <div class="mini-promise">
+            <span class="p-icon">🌹</span>
+            <span>A date night anywhere you wish</span>
+          </div>
+        </div>
+
+        <div class="letter-actions">
+          <button class="btn-letter-forgive" id="letterForgiveBtn">
+            <span>I Forgive You ❤️</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Warm Hug Overlay & Heart Shower (Triggered by "One More Hug? 🤗") -->
+  <div class="hug-overlay" id="hugOverlay" aria-hidden="true">
+    <div class="hug-content-card">
+      <div class="hug-emoji-anim">
+        <span class="hug-bear left-bear">⊂(・ヮ・⊂)</span>
+        <span class="hug-heart-center">💖</span>
+        <span class="hug-bear right-bear">(っ˘̩╭╮˘̩)っ</span>
+      </div>
+      <h3 class="hug-title">Here is the warmest, tightest hug! 🤗</h3>
+      <p class="hug-message">
+        Wrapping both my arms around you and never letting go until you feel safe, loved, and smiling again.
+      </p>
+      <div class="hug-pulse-ring"></div>
+      <button class="btn-hug-done" id="hugDoneBtn">Feel Better Now 🥰</button>
+    </div>
+  </div>
+
+  <!-- Interactive Sparkles Canvas for Mouse/Touch Particles -->
+  <canvas id="trailCanvas"></canvas>
+
+  <!-- External CDNs with Robust Offline Fallbacks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- Main Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
